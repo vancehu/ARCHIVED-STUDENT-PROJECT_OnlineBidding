@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Derby - OnlineBidding@localhost" uuid="f18b6fb5-39d3-4131-a39a-9efbef9bdeab">
+    <database-info product="Apache Derby" version="10.11.1.1 - (1616546)" jdbc-version="4.2" driver-name="Apache Derby Network Client JDBC Driver" driver-version="10.11.1.1 - (1616546)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="APP" catalog=""/>
+    <schema name="TEST" catalog=""/>
+    <table name="BIDDING" schema="TEST" catalog="" type="TABLE">
+      <column name="LISTING_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="BIDDER_ID" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="EVENT_TIME" sqlType="TIMESTAMP" precision="29" scale="9" nullable="false" jdbcType="93"/>
+      <column name="PRICE" sqlType="DECIMAL" precision="15" scale="2" nullable="false" jdbcType="3"/>
+      <foreign-key name="SQL150223212045650" columns="LISTING_ID" ref-table="LISTING" ref-schema="TEST" ref-catalog="" ref-columns="LISTING_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="SQL150223212045651" columns="BIDDER_ID" ref-table="USERS" ref-schema="TEST" ref-catalog="" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="LISTING" schema="TEST" catalog="" type="TABLE">
+      <column name="LISTING_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="QVVUT0lOQ1JFTUVOVDogc3RhcnQgMSBpbmNyZW1lbnQgMQ==" autoIncrement="true"/>
+      <column name="LISTING_NAME" sqlType="VARCHAR" precision="63" scale="0" nullable="false" jdbcType="12"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INITIAL_PRICE" sqlType="DECIMAL" precision="15" scale="2" nullable="false" jdbcType="3"/>
+      <column name="ENDING_TIME" sqlType="TIMESTAMP" precision="29" scale="9" nullable="false" jdbcType="93"/>
+      <column name="CREATOR_ID" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LOCATION_X" sqlType="DOUBLE" precision="52" scale="0" nullable="true" jdbcType="8"/>
+      <column name="LOCATION_Y" sqlType="DOUBLE" precision="52" scale="0" nullable="true" jdbcType="8"/>
+      <primary-key name="SQL150223212042650" columns="LISTING_ID"/>
+      <foreign-key name="SQL150223212042651" columns="CREATOR_ID" ref-table="USERS" ref-schema="TEST" ref-catalog="" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="SQL150223212045650" table="BIDDING" schema="TEST" catalog="" columns="LISTING_ID"/>
+    </table>
+    <table name="USERS" schema="TEST" catalog="" type="TABLE">
+      <column name="USER_ID" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="USER_NAME" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="SQL150223212028440" columns="USER_ID"/>
+      <exported-key name="SQL150223212045651" table="BIDDING" schema="TEST" catalog="" columns="BIDDER_ID"/>
+      <exported-key name="SQL150223212042651" table="LISTING" schema="TEST" catalog="" columns="CREATOR_ID"/>
+    </table>
+  </data-source>
+</component>

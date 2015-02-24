@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2549664752">
+    <data-source source="LOCAL" name="Derby - OnlineBidding@localhost" uuid="f18b6fb5-39d3-4131-a39a-9efbef9bdeab">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/OnlineBidding</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
