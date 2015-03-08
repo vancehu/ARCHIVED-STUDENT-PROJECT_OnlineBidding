@@ -12,7 +12,7 @@
 </head>
 <body>
 <p>
-    <span id="userID">User_0000</span>
+    <span id="userID">User_0000h</span>
     <input type="text">
     <a href="#">Change Nickname</a>
 </p>
